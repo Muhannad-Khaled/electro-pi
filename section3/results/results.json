@@ -1,0 +1,104 @@
+{
+  "fp16": {
+    "mode": "fp16",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "load_seconds": 3.9,
+    "weights_vram_gb": 2.88,
+    "peak_vram_gb": 2.9,
+    "avg_tokens_per_sec": 27.55,
+    "total_new_tokens": 799,
+    "runs": [
+      {
+        "id": "reasoning",
+        "category": "multi-step reasoning",
+        "text": "To calculate the total cost of the items Ali bought:\n\n- Cost of notebooks: \\(3 \\times 12.50\\) EGP\n- Cost of pens: \\(2 \\times 4.75\\) EGP\n\nFirst, let's calculate the cost of the notebooks:\n\\[3 \\times 12.50 = 37.50\\] EGP\n\nNext, let's calculate the cost of the pens:\n\\[2 \\times 4.75 = 9.50\\] EGP\n\nNow, we add these two amounts to find the total cost:\n\\[37.50 + 9.50 = 47.00\\] EGP\n\nAli paid with a 50 EGP note, so we subtract the total cost from this amount to find out how much change he gets:\n\\[50 - 47 = 3\\] EGP\n\nTherefore, Ali gets back **3 EGP** in change.",
+        "new_tokens": 207,
+        "seconds": 7.543,
+        "tokens_per_sec": 27.44
+      },
+      {
+        "id": "factual",
+        "category": "factual QA",
+        "text": "- **TCP (Transmission Control Protocol)**:\n  - **Reliability**: TCP is designed to ensure reliable data transmission with error checking and correction.\n  - **Ordering**: Data packets are sent out of order but reassembled at the receiving end without loss.\n  - **Speed**: Can be slower due to overhead for error checking and packet management.\n  - **Use Case**: Web browsing, file transfers.\n\n- **UDP (User Datagram Protocol)**:\n  - **Reliability**: No guarantees on delivery or error handling; packets may arrive out of order or lost.\n  - **Ordering**: Packets are not guaranteed to arrive in the same order they were sent.\n  - **Speed**: Faster than TCP because it does not include error-checking mechanisms.\n  - **Use Case**: Real-time applications like voice chat, online gaming.",
+        "new_tokens": 171,
+        "seconds": 6.193,
+        "tokens_per_sec": 27.61
+      },
+      {
+        "id": "code",
+        "category": "code generation",
+        "text": "```python\ndef fib(n: int) -> int:\n    \"\"\"\n    Returns the n-th Fibonacci number using memoization.\n    \n    Args:\n    n (int): The position in the Fibonacci sequence to return.\n    \n    Returns:\n    int: The n-th Fibonacci number.\n    \n    Raises:\n    ValueError: If n is not a non-negative integer.\n    \"\"\"\n    if not isinstance(n, int) or n < 0:\n        raise ValueError(\"n must be a non-negative integer\")\n    \n    @lru_cache(maxsize=None)\n    def recursive_fibonacci(n):\n        if n == 0:\n            return 0\n        elif n == 1:\n            return 1\n        else:\n            return recursive_fibonacci(n - 1) + recursive_fibonacci(n - 2)\n    \n    return recursive_fibonacci(n)\n\n# Check function with provided data points\nassert fib(10) == 55, \"Test case 1 failed\"\nassert fib(1) == 1, \"Test case 2 failed\"\nassert fib(8) == 21, \"Test case 3 failed\"\nprint(\"All test cases passed!\")\n```\n\nThis solution uses the `@lru_cache` decorator from the",
+        "new_tokens": 256,
+        "seconds": 8.996,
+        "tokens_per_sec": 28.46
+      },
+      {
+        "id": "arabic",
+        "category": "arabic generation",
+        "text": "Machine Learning هو علم يهدف إلى تطوير أنظمة تعتمد على البيانات والتعلم من خلالها للقيام بأعمال دون الحاجة إلى التعلم المسبق. في الحياة اليومية، يمكننا استخدامه في العديد من التطبيقات مثل تحديد الصور أو النصوص باستخدام الذكاء الاصطناعي، أو تشخيص الأخطاء الطبية بناءً على البيانات الطبية المتاحة.",
+        "new_tokens": 89,
+        "seconds": 3.357,
+        "tokens_per_sec": 26.51
+      },
+      {
+        "id": "summarization",
+        "category": "summarization",
+        "text": "Quantization reduces the numerical precision of neural network weights and activations, decreasing memory usage and allowing larger models to run on smaller hardware. However, it introduces a loss of information that may affect model performance, especially on complex tasks or those relying heavily on specific language features. Different quantization techniques vary in their approach and efficiency, balancing between reduced memory requirements and potential degradation in accuracy.",
+        "new_tokens": 76,
+        "seconds": 2.913,
+        "tokens_per_sec": 26.09
+      }
+    ]
+  },
+  "nf4": {
+    "mode": "nf4",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "load_seconds": 6.2,
+    "weights_vram_gb": 1.08,
+    "peak_vram_gb": 1.15,
+    "avg_tokens_per_sec": 12.65,
+    "total_new_tokens": 764,
+    "runs": [
+      {
+        "id": "reasoning",
+        "category": "multi-step reasoning",
+        "text": "To calculate the total cost of Ali's purchase, we need to multiply the number of items by their respective prices.\n\nFor the notebooks:\n\\[ 3 \\text{ notebooks} \\times \\$12.50 \\text{ per notebook} = \\$37.50 \\]\n\nFor the pens:\n\\[ 2 \\text{ pens} \\times \\$4.75 \\text{ per pen} = \\$9.50 \\]\n\nNow, add these amounts together to find the total cost:\n\\[ \\$37.50 + \\$9.50 = \\$47.00 \\]\n\nAli paid with a 50 EGP note, so let's subtract the total cost from this amount to find out how much change he gets:\n\\[ \\$50 - \\$47.00 = \\$3.00 \\]\n\nTherefore, Ali gets back **\\$3.00** in change.",
+        "new_tokens": 190,
+        "seconds": 15.316,
+        "tokens_per_sec": 12.41
+      },
+      {
+        "id": "factual",
+        "category": "factual QA",
+        "text": "- **TCP (Transmission Control Protocol)**: Provides reliable, ordered delivery of data packets. It ensures that all segments are received in the correct order without loss or corruption. This makes it suitable for applications requiring high reliability such as online banking transactions.\n  \n- **UDP (User Datagram Protocol)**: Offers unreliable, connectionless service where packets may be lost, out of order, or delivered late. It is faster than TCP but does not guarantee delivery or sequence numbers, making it more efficient for real-time applications like streaming video.\n\nIn summary:\n- **Reliability**: TCP guarantees delivery and order, while UDP does not.\n- **Ordering**: TCP maintains order, whereas UDP does not.\n- **Speed**: UDP is generally faster due to its lack of guaranteed delivery, but TCP provides better reliability at the cost of performance.",
+        "new_tokens": 166,
+        "seconds": 13.194,
+        "tokens_per_sec": 12.58
+      },
+      {
+        "id": "code",
+        "category": "code generation",
+        "text": "```python\nfrom typing import *\nimport functools\n\ndef fib(n: int) -> int:\n    \"\"\"\n    Returns the n-th Fibonacci number using memoization.\n    \n    Args:\n    n (int): The position in the Fibonacci sequence to return.\n    \n    Raises:\n    ValueError: If n is not a positive integer.\n    \n    Returns:\n    int: The n-th Fibonacci number.\n    \"\"\"\n    @functools.lru_cache(maxsize=None)\n    def _fib(a0: int = 0, a1: int = 1) -> int:\n        if n < 0:\n            raise ValueError(\"n must be a non-negative integer\")\n        if n == 0:\n            return a0\n        if n == 1:\n            return a1\n        return _fib(a1, a0 + a1)\n    \n    return _fib()\n\n# Example usage\nprint(fib(5))  # Output: 3\nprint(fib(8))  # Output: 21\n```",
+        "new_tokens": 210,
+        "seconds": 16.422,
+        "tokens_per_sec": 12.79
+      },
+      {
+        "id": "arabic",
+        "category": "arabic generation",
+        "text": "machine learning هو تقنية تستخدم الآلات للتعلم من البيانات وتقديم النتائج أو القرارات دون الحاجة إلى التدريب预先. يمكن أن يساعدك هذا في حل المشكلات والفرص في حياتك اليومية. مثلاً، عندما تقوم بتقسيم الأوراق في لعبة \"لعبة الورق\"، يمكنك استخدام machine learning لتحليل الأوراق وتقييمها قبل التقسيم، مما يساعدك على تحديد الأوراق الأكثر أهمية بشكل أفضل.",
+        "new_tokens": 110,
+        "seconds": 8.982,
+        "tokens_per_sec": 12.25
+      },
+      {
+        "id": "summarization",
+        "category": "summarization",
+        "text": "Quantization reduces the precision of neural network weights and activations to lower bit formats (e.g., 8-bit or 4-bit) to save memory, allowing larger models to run on smaller hardware and reduce inference memory pressure. However, it introduces a loss of information that can affect model accuracy, especially on complex tasks or languages with limited training data. Quantization techniques vary in their approach to balancing between reduced memory usage and maintained performance.",
+        "new_tokens": 88,
+        "seconds": 6.481,
+        "tokens_per_sec": 13.58
+      }
+    ]
+  }
+}
