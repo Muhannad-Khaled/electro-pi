@@ -36,10 +36,12 @@ Under 10-way concurrency the picture is honest and ugly: requests serialize,
 so each queued request's TTFT is the sum of every generation ahead of it —
 the last native request waits 82s for its first token. Per-request decode
 speed stays flat (~12–13 tok/s native), proving the bottleneck is pure
-queueing, not compute degradation. The container is ~2.3x worse under load
-(early requests dropped to 1.7–7 tok/s before recovering): the WSL2 VM's 4GB
-memory cap puts the model's working set under pressure exactly when 10
-connections arrive at once. This curve is the whole argument for continuous
+queueing, not compute degradation. The container is ~2.3x worse under load,
+with early requests dropping to 1.7–7 tok/s before recovering. That pattern is
+consistent with memory pressure under the 4GB WSL2 cap (likely page-cache
+eviction of the mmap'd model file when 10 connections arrive at once), though
+we did not profile inside the container to confirm the cause. This curve is
+the whole argument for continuous
 batching in production: the compute is there, the serving model wastes it.
 
 ## Scaling to 50 concurrent users
