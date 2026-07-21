@@ -1,0 +1,93 @@
+{
+  "label": "native",
+  "prompt": "Explain, for a general audience, why the sky is blue.",
+  "max_tokens": 128,
+  "concurrency": 10,
+  "baseline": {
+    "request_id": 0,
+    "ttft_s": 0.352,
+    "total_s": 10.284,
+    "tokens": 128,
+    "tokens_per_s": 12.89
+  },
+  "concurrent_requests": [
+    {
+      "request_id": 9,
+      "ttft_s": 0.362,
+      "total_s": 6.692,
+      "tokens": 72,
+      "tokens_per_s": 11.37
+    },
+    {
+      "request_id": 3,
+      "ttft_s": 6.77,
+      "total_s": 16.737,
+      "tokens": 119,
+      "tokens_per_s": 11.94
+    },
+    {
+      "request_id": 4,
+      "ttft_s": 16.806,
+      "total_s": 27.463,
+      "tokens": 128,
+      "tokens_per_s": 12.01
+    },
+    {
+      "request_id": 10,
+      "ttft_s": 27.548,
+      "total_s": 37.812,
+      "tokens": 128,
+      "tokens_per_s": 12.47
+    },
+    {
+      "request_id": 7,
+      "ttft_s": 37.901,
+      "total_s": 47.973,
+      "tokens": 128,
+      "tokens_per_s": 12.71
+    },
+    {
+      "request_id": 8,
+      "ttft_s": 48.063,
+      "total_s": 58.409,
+      "tokens": 128,
+      "tokens_per_s": 12.37
+    },
+    {
+      "request_id": 1,
+      "ttft_s": 58.499,
+      "total_s": 65.172,
+      "tokens": 82,
+      "tokens_per_s": 12.29
+    },
+    {
+      "request_id": 2,
+      "ttft_s": 65.239,
+      "total_s": 72.271,
+      "tokens": 90,
+      "tokens_per_s": 12.8
+    },
+    {
+      "request_id": 6,
+      "ttft_s": 72.332,
+      "total_s": 82.246,
+      "tokens": 128,
+      "tokens_per_s": 12.91
+    },
+    {
+      "request_id": 5,
+      "ttft_s": 82.336,
+      "total_s": 92.437,
+      "tokens": 128,
+      "tokens_per_s": 12.67
+    }
+  ],
+  "summary": {
+    "ttft_min_s": 0.362,
+    "ttft_median_s": 42.982,
+    "ttft_max_s": 82.336,
+    "total_min_s": 6.692,
+    "total_median_s": 53.191,
+    "total_max_s": 92.437
+  }
+}

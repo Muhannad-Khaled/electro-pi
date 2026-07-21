@@ -1,0 +1,8 @@
+# Keep the build context tiny: the model is downloaded inside the build,
+# so shipping the local 1.1GB copy up to the daemon would be slow and useless.
+venv/
+models/
+__pycache__/
+results/
+.git
+*.gguf

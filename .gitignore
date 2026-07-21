@@ -1,0 +1,11 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+
+# Large model artifacts — never commit GGUF weights
+models/
+*.gguf
