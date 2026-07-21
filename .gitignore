@@ -9,3 +9,4 @@ __pycache__/
 # Large model artifacts — never commit GGUF weights
 models/
 *.gguf
+.claude/
