@@ -39,7 +39,7 @@ Requirements: Python 3.10+, Docker (Section 4 only), a free Gemini API key
 (Sections 1–2 only; https://aistudio.google.com/apikey).
 
 ```bash
-git clone <repo>
+git clone https://github.com/Muhannad-Khaled/electro-pi
 cd electro-pi
 export GOOGLE_API_KEY=...   # sections 1–2 read it via dotenv (.env.example provided)
 ```
@@ -121,7 +121,7 @@ page-cache pressure under the 4 GB memory cap.
 
 Stated per section in each notes file. The main ones: STT/TTS stubbed in
 Section 1; Section 2's cross-document citation example has one documented
-deviation (see its examples/answers.md §2); no perplexity metric and no
-Section 3 README (run steps are above; its results are committed); Section 4
+deviation (see its examples/answers.md §2); no perplexity metric in Section 3
+(its README is a pointer here; run steps are above, results committed); Section 4
 intentionally serves one request at a time, and its container-slowdown
 explanation is a hypothesis, not a profiled result.
